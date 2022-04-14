@@ -41,8 +41,8 @@ header h1 {
   height: 125px;
 }
 
-/* sign in button style starts */
-#sign-in{
+/* sign in and back button style starts */
+.top-btn{
   border-radius: 15px;
   padding: 10px 15px;
   color: #ffd700;
@@ -51,7 +51,7 @@ header h1 {
   height: 100px;
 }
 
-#sign-in:hover {
+.top-btn:hover {
   background: #a2bbce;
   color: #024e76;
   border-radius: 15px;
