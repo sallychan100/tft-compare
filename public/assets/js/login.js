@@ -15,7 +15,7 @@ async function signUp(event){
     const password = signUpPasswordInput.value.trim();
   
     if (email && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user/signup', {
             method: 'post',
             body: JSON.stringify({
                 email,
@@ -25,8 +25,9 @@ async function signUp(event){
         });
         if (response.ok) {
             console.log('success');
+            document.location.replace('/')
         } else {
-            alert(response.statusText);
+            alert('Unable to create user');
         }
     }
 }

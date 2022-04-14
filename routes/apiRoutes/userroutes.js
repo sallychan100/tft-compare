@@ -3,6 +3,7 @@ const { User } = require("../../models");
 
 router.post('/signup', (req, res) => {
     // Access our User model and run .findAll() method)
+    console.log(req.body)
     User.create({email: req.body.email,
         password: req.body.password,})
     
