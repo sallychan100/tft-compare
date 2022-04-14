@@ -5,6 +5,7 @@ require('dotenv').config();
 // create connection to our database, pass in your MySQL information for username and password
 let sequelize;
 
+//added on heroku
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
