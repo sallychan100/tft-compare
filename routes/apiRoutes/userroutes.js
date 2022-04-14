@@ -21,7 +21,12 @@ router.post('/login', (req,res) => {
         }   
     }).then((dbUserData)=>{
         if (dbUserData) {
+            var passwordMatch = dbUserData.checkPassword(req.body.password)
+            if (passwordMatch){
             res.status(200).json(dbUserData)
+            }else {
+            res.status(400).json({Message: "Invalid password"})
+            }
         } else {
             res.status(400).json({Message: "No User Found"})
         }

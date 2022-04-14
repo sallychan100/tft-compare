@@ -5,7 +5,25 @@ const signUpPasswordInput = document.querySelector('.sign-up-password');
 
 async function signIn(event){
     event.preventDefault();
-    // session logic
+    const email = signInEmailInput.value.trim();
+    const password = signInPasswordInput.value.trim();
+  
+    if (email && password) {
+        const response = await fetch('/api/user/login', {
+            method: 'post',
+            body: JSON.stringify({
+                email,
+                password
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+            console.log('success');
+            document.location.replace('/')
+        } else {
+            alert('Unable to sign in');
+        }
+    }
 }
 
 async function signUp(event){
